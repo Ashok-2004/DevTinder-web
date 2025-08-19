@@ -15,14 +15,12 @@ const Body=()=>{
             const user=await axios.get(Base_URL+"/profile/view",{
                 withCredentials:true
             })
-            console.log(user)
             dispatch(addUser(user.data))
         }
         catch(err){
             if(err.status===401){
                 navigate("/login")
             }
-                console.log(err)
         }
     }
     useEffect(()=>{
