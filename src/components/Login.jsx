@@ -7,6 +7,7 @@ import { Base_URL } from "../utils/constants";
 const Login = () => {
   const [email, setEmail] = useState("ashok@gmail.com");
   const [password, setPassword] = useState("Ashok@123");
+  const [error,SetError]=useState("")
   const dispatch=useDispatch();
   const navigate=useNavigate();
   const handleLogin = async (e) => {
@@ -21,6 +22,7 @@ const Login = () => {
       dispatch(addUser(res.data))
       return navigate("/");
     } catch (err) {
+      SetError(err?.response?.data || "something went wrong")
       console.error("Login error:", err);
     }
   };
@@ -59,7 +61,7 @@ const Login = () => {
                 required
               />
             </div>
-
+            <p className="text-red-500">{error}</p>
             <button type="submit" className="btn btn-primary w-full mt-2">
               Login
             </button>
