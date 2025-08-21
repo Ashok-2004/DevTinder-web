@@ -1,11 +1,10 @@
 const UserCard=({user})=>{
-    const {firstName,lastName,photoUrl,gender,age,about}=user
-    console.log(user)
+    const {firstName,lastName,photoURL,gender,age,about}=user
     return(
     <div className="card bg-base-100 w-96 shadow-sm">
         <figure>
             <img
-            src={user.photoURL}
+            src={photoURL}
             alt="photo" />
              </figure>
               <div className="card-body">
