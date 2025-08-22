@@ -15,6 +15,7 @@ const Body=()=>{
             const user=await axios.get(Base_URL+"/profile/view",{
                 withCredentials:true
             })
+            console.log(user.data)
             dispatch(addUser(user.data))
         }
         catch(err){
