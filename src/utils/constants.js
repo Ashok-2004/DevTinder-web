@@ -1,1 +1,1 @@
-export const Base_URL="https://devtinder-sm6a.onrender.com"
+export const Base_URL="https://devtinder-1-gms7.onrender.com"
